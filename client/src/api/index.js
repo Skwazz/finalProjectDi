@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'https://memori3s.netlify.app' });
+const API = axios.create({ baseURL: '//memori3s.netlify.app' });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem('profile')) {
