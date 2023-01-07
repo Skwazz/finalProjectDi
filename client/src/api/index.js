@@ -1,9 +1,10 @@
 import axios from 'axios';
-// import cors from 'cors';
+
 
 // app.use(cors())
 
 const API = axios.create({ baseURL: 'https://memori3s.netlify.app/' });
+
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem('profile')) {
@@ -12,6 +13,7 @@ API.interceptors.request.use((req) => {
 
   return req;
 });
+
 
 export const fetchPost = (id) => API.get(`/posts/${id}`);
 export const fetchPosts = (page) => API.get(`/posts?page=${page}`);

@@ -2,9 +2,9 @@
     "configurations": [
         {
             "type": "chrome",
-            "name": "http://localhost:5000/user/signup",
+            "name": "https://localhost:5000/user/signup",
             "request": "launch",
-            "url": "http://localhost:5000/user/signup"
+            "url": "https://localhost:5000/user/signup"
         }
     ]
 }
