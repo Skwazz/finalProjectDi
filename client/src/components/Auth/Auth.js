@@ -39,20 +39,20 @@ const SignUp = () => {
     }
   };
 
-  // const googleSuccess = async (res) => {
-  //   const result = res?.profileObj;
-  //   const token = res?.tokenId;
+  const googleSuccess = async (res) => {
+    const result = res?.profileObj;
+    const token = res?.tokenId;
 
-  //   try {
-  //     dispatch({ type: AUTH, data: { result, token } });
+    try {
+      dispatch({ type: AUTH, data: { result, token } });
 
-  //     history.push('/');
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+      history.push('/');
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  // const googleError = () => console.log('Google Sign In was unsuccessful. Try again later');
+  const googleError = () => console.log('Google Sign In was unsuccessful. Try again later');
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -88,7 +88,7 @@ const SignUp = () => {
             {/* onSuccess={googleSuccess}
             onFailure={googleError}
             cookiePolicy="single_host_origin"
-          /> */}
+          // /> */}
           <Grid container justify="flex-end">
             <Grid item>
               <Button onClick={switchMode}>

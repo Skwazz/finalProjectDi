@@ -8,12 +8,17 @@ import postRoutes from './routes/posts.js';
 import userRouter from './routes/users.js'
 
 const app = express();
-
+app.use(cors());
 dotenv.config();
+
+app.use((req, res, next) => {
+  res.setHeader('Content-Security-Policy', "default-src 'self' https:");
+  next();
+});
 
 app.use(express.json({ limit: '30mb', extended: true }))
 app.use(express.urlencoded({ limit: '30mb', extended: true }))
-app.use(cors());
+
 
 app.use('/posts', postRoutes);
 app.use('/user', userRouter);
