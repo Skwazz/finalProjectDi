@@ -9,6 +9,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build-project": "node build-project.js",
+    "start": "node index.js"
   }
 }
